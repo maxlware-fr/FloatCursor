@@ -23,6 +23,7 @@
 
   "background": {
     "service_worker": "background.js",
+    "scripts": ["background.js"],
     "type": "module"
   },
 
@@ -69,5 +70,12 @@
     "extension_pages": "script-src 'self'; object-src 'self';"
   },
 
-  "incognito": "split"
+  "incognito": "split",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "floatcursor@maxlware.com",
+      "strict_min_version": "109.0"
+    }
+  }
 }
