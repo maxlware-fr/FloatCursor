@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FloatCursor - Gestionnaire de skins</title>
+  <link rel="stylesheet" href="skins.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Gestionnaire de skins</h1>
+    <button id="addSkin" class="btn">+ Ajouter un skin</button>
+  </div>
+
+  <div id="skinList" class="skin-list"></div>
+
+  <!-- Modal pour ajouter/éditer un skin -->
+  <div id="skinModal" class="modal">
+    <div class="modal-content">
+      <h2 id="modalTitle">Nouveau skin</h2>
+      <div class="form-group">
+        <label>Nom</label>
+        <input type="text" id="skinName" placeholder="Mon skin">
+      </div>
+      <div class="form-group">
+        <label>Type</label>
+        <select id="skinType">
+          <option value="svg">SVG (code)</option>
+          <option value="image">Image (PNG, JPEG)</option>
+          <option value="css">Curseur CSS (url(...) ou mot-clé)</option>
+        </select>
+      </div>
+      <div class="form-group" id="svgGroup">
+        <label>Code SVG</label>
+        <textarea id="skinSvg" rows="5" placeholder="<svg ...></svg>"></textarea>
+        <small>Utilisez 'currentColor' pour la couleur personnalisable.</small>
+      </div>
+      <div class="form-group" id="imageGroup" style="display:none;">
+        <label>Image</label>
+        <input type="file" id="skinImage" accept="image/*">
+        <div id="imagePreview"></div>
+      </div>
+      <div class="form-group" id="cssGroup" style="display:none;">
+        <label>Valeur CSS cursor</label>
+        <input type="text" id="skinCss" placeholder="url('cursor.png') 2 2, auto">
+        <small>Exemple : url('https://exemple.com/cursor.png') 2 2, auto</small>
+      </div>
+      <div class="form-group">
+        <label>Couleur (pour SVG)</label>
+        <input type="color" id="skinColor" value="#ff5722">
+      </div>
+      <div class="form-group">
+        <label>Taille (px)</label>
+        <input type="number" id="skinSize" min="16" max="128" value="32">
+      </div>
+      <div class="modal-actions">
+        <button id="saveSkin" class="btn">Enregistrer</button>
+        <button id="cancelModal" class="btn btn-secondary">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="skins.js"></script>
+</body>
+</html>
