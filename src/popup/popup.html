@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FloatCursor - Contrôle</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>FloatCursor <span>Par Maxlware</span></h1>
+
+    <div class="setting">
+      <label for="enabled">Activer</label>
+      <input type="checkbox" id="enabled">
+    </div>
+
+    <div class="setting">
+      <label for="cursorMode">Mode</label>
+      <select id="cursorMode">
+        <option value="element">Élément personnalisé</option>
+        <option value="css">Curseur CSS</option>
+      </select>
+    </div>
+
+    <div class="setting">
+      <label for="skinSelect">Skin actif</label>
+      <select id="skinSelect"></select>
+      <button id="manageSkins" class="btn">Gérer</button>
+    </div>
+
+    <hr>
+
+    <div class="setting">
+      <label for="trailLength">Traînée : <span id="trailLengthValue">10</span></label>
+      <input type="range" id="trailLength" min="0" max="20" step="1">
+    </div>
+
+    <div class="setting">
+      <label for="trailOpacity">Opacité traînée : <span id="trailOpacityValue">0.6</span></label>
+      <input type="range" id="trailOpacity" min="0" max="1" step="0.05">
+    </div>
+
+    <div class="setting">
+      <label for="trailColor">Couleur traînée</label>
+      <input type="color" id="trailColor">
+    </div>
+
+    <div class="setting">
+      <label for="clickEffect">Effet de clic</label>
+      <input type="checkbox" id="clickEffect">
+    </div>
+
+    <footer>
+      <p>Version 2.0.0 • <a href="#" id="openSkins">Gestionnaire de skins</a></p>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
